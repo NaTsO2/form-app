@@ -2,11 +2,10 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { MainCard } from "./_components/MainCard";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { SecondCard } from "./_components/SecondCard";
 import { ThirdCard } from "./_components/ThirdCard";
 import { FinishCard } from "./_components/FinishCard";
-import { set } from "date-fns";
 
 const FormPage = () => {
   const comp = [MainCard, SecondCard, ThirdCard, FinishCard];

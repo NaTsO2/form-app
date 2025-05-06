@@ -68,6 +68,7 @@ export const Input = ({
           <img
             src={value}
             alt="image"
+            fill="true"
             className="h-[180px] rounded-[8px] object-cover w-full"
           />
           <Button
