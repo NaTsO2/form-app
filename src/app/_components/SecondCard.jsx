@@ -82,7 +82,7 @@ export const SecondCard = ({
       name: "password",
     },
     {
-      title: "Confirm sassword",
+      title: "Confirm password",
       placeholder: "Нууц үгээ давтаж бич",
       type: "password",
       errorText: errorText.confirmPassword,

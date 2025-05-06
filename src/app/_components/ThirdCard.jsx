@@ -29,8 +29,6 @@ export const ThirdCard = ({
 
     if (!value.image) {
       validationErrors.image = "Гоё зургаа оруулаарай";
-    } else if (!/\.(gif|jpe?g|tiff?|png|webp|bmp)$/i.test(value.image)) {
-      validationErrors.image = "Зураг л оруулна хө";
     }
     setErrorText(validationErrors);
     const updatedClicked = {};
