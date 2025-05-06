@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { SecondCard } from "./_components/SecondCard";
 import { ThirdCard } from "./_components/ThirdCard";
 import { FinishCard } from "./_components/FinishCard";
+import { set } from "date-fns";
 
 const FormPage = () => {
   const comp = [MainCard, SecondCard, ThirdCard, FinishCard];
@@ -32,8 +33,17 @@ const FormPage = () => {
   };
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setValue((prev) => ({ ...prev, [name]: value }));
+    const { name, value, files } = e.target;
+    if (files && files[0]) {
+      const file = files[0];
+      setValue((prev) => ({
+        ...prev,
+        image: URL.createObjectURL(file),
+      }));
+    } else {
+      setValue((prev) => ({ ...prev, [name]: value }));
+    }
+
     setErrorText((prev) => ({ ...prev, [name]: "" }));
   };
 
@@ -49,6 +59,7 @@ const FormPage = () => {
 
   return (
     <form onSubmit={handleSubmit}>
+      {/* {JSON.stringify(value)} */}
       <AnimatePresence mode="wait">
         <motion.div
           key={index}
@@ -70,6 +81,7 @@ const FormPage = () => {
             onFocusIn={handleFocus}
             clicked={clicked}
             setClicked={setClicked}
+            setValue={setValue}
           />
         </motion.div>
       </AnimatePresence>

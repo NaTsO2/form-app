@@ -3,7 +3,6 @@ import { NamesInputs } from "./NamesInputs";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import { Button } from "./Button";
 import { differenceInYears } from "date-fns";
-import { useState } from "react";
 
 export const ThirdCard = ({
   comp,
@@ -19,7 +18,6 @@ export const ThirdCard = ({
   setClicked,
   setValue,
 }) => {
-
   const stepThird = () => {
     const age = differenceInYears(new Date(), new Date(value.date));
     const validationErrors = {};
@@ -73,14 +71,13 @@ export const ThirdCard = ({
     },
     {
       title: "Profile image",
-      placeholder: "Зургаа оруул",
       type: "file",
       errorText: errorText.image,
-      errorBorder: "border-red-500",
       value: value.image,
       name: "image",
     },
   ];
+
   return (
     <div className="p-[32px] bg-[#FFFFFF] rounded-[8px] m-[40px] ">
       <Header />
@@ -89,6 +86,9 @@ export const ThirdCard = ({
         value={value}
         onFocusIn={onFocusIn}
         clicked={clicked}
+        setValue={setValue}
+        setErrorText={setErrorText}
+        handleChange={handleChange}
       />
       <div className="flex flex-row-reverse mt-[50px] gap-[8px]">
         {btnsStyle.map((btn, index) => {
@@ -103,6 +103,9 @@ export const ThirdCard = ({
           );
         })}
       </div>
+      <p className="text-center text-[12px] pt-[18px]">
+        Made by <span className="text-blue-500">NaTsO</span>
+      </p>
     </div>
   );
 };

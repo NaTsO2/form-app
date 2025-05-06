@@ -132,6 +132,9 @@ export const SecondCard = ({
           );
         })}
       </div>
+      <p className="text-center text-[12px] pt-[18px]">
+        Made by <span className="text-blue-500">NaTsO</span>
+      </p>
     </div>
   );
 };

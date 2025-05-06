@@ -84,7 +84,7 @@ export const MainCard = ({
   ];
 
   const style =
-    "flex justify-center items-center gap-[2px] w-full h-[44px] px-[32px] rounded-[6px] border-none cursor-pointer mt-[162px] text-[#FFFFFF] bg-[#121316]";
+    "flex justify-center items-center gap-[2px] w-full h-[44px] px-[32px] rounded-[6px] border-none cursor-pointer mt-[100px] text-[#FFFFFF] bg-[#121316]";
   const arrow = <ChevronRight className="size-[18px]" />;
   return (
     <div className="p-[32px] bg-[#FFFFFF] rounded-[8px] m-[40px]">
@@ -93,7 +93,7 @@ export const MainCard = ({
         value={value}
         inputLabels={inputLabels}
         handleChange={handleChange}
-        errorText={errorText}
+        // errorText={errorText}
         onFocusIn={onFocusIn}
         clicked={clicked}
       />
@@ -103,6 +103,10 @@ export const MainCard = ({
         arrow={arrow}
         onClick={stepOne}
       />
+
+      <p className="text-center text-[12px] pt-[18px]">
+        Made by <span className="text-blue-500">NaTsO</span>
+      </p>
     </div>
   );
 };

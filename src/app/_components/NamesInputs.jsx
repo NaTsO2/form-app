@@ -1,6 +1,13 @@
 import { Input } from "./Input";
 
-export const NamesInputs = ({ inputLabels, handleChange, onFocusIn, clicked, handleClick }) => {
+export const NamesInputs = ({
+  inputLabels,
+  handleChange,
+  onFocusIn,
+  clicked,
+  handleClick,
+  setValue
+}) => {
   return (
     <>
       {inputLabels.map((inputLabel, index) => {
@@ -19,6 +26,7 @@ export const NamesInputs = ({ inputLabels, handleChange, onFocusIn, clicked, han
               errorBorder={inputLabel.errorBorder}
               onFocusIn={onFocusIn}
               clicked={clicked}
+              setValue={setValue}
               onClick={handleClick}
             />
           </div>
